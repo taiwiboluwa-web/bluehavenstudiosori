@@ -1,3 +1,4 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import elejaCard from "/assets/b08ecef993ea1c1fe71b8a9a1f1416db91bd60e8.png";
 import elejaGiftCard from "/assets/758f15d90828c8cc6936b5fa6e442a28751c045f.png";
 import elejaNotebook from "/assets/595b329d3858725a4cf74ab46d2b454e75302711.png";
@@ -6,6 +7,7 @@ import elejaLogoDark from "/assets/da2fbe02536606e39395841fa852863673516fe2.png"
 import elejaLogoLight from "/assets/67b48e005d67154416435c447509d0a42c240ac2.png";
 
 export function ElejaExchangePortfolio() {
+  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto">

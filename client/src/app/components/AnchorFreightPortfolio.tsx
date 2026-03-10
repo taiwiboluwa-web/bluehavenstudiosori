@@ -1,8 +1,10 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import anchorBlack from "/assets/a5ec738fe9697b8a651fd91f22119de99cb39e53.png";
 import anchorWhite from "/assets/65a53d85adafcde6e82f00e9261944bb2c6356cc.png";
 import anchorBlue from "/assets/c55bcfa0faed5c2bccc9caa1617a5f49b358b142.png";
 
 export function AnchorFreightPortfolio() {
+  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto">

@@ -1,3 +1,4 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import primaxLogo from "/assets/af5a8fc9c64c0440dad680de29cbde577ff765c9.png";
 import primaxMenu from "/assets/5aa8037a104ce92844a54cd99f3d33c3d9bfc20e.png";
 const primaxSpecials = "https://d2xsxph8kpxj0f.cloudfront.net/310519663390689289/Cm2CCi2zaFHN3L7TYPGf98/ba1dc4551f9beaa8e0cddd0c7775cdec658d7c79_5f392243.png";
@@ -11,6 +12,7 @@ import primaxContainerWhite from "/assets/52fe28c79fcdcf58c9138519d5e46fcf4f8e8f
 import primaxNoodleBoxWhite from "/assets/d190f2dd48e78600952a5cf3f83e61cf5e5d1090.png";
 
 export function PrimaxPortfolio() {
+  const { theme } = useTheme();
   return (
     <section className="py-12 md:py-20 px-4 md:px-[10%] bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">

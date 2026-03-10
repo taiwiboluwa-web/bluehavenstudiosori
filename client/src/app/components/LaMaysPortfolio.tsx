@@ -1,7 +1,9 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import lamaysBlack from "/assets/c327827d1376e3582ffaebb8c81398f851840dbc.png";
 import lamaysWhite from "/assets/f3ce03bd4beac21c2978bf6f8542f762423e9b36.png";
 
 export function LaMaysPortfolio() {
+  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">

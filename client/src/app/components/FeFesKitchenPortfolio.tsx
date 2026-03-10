@@ -1,8 +1,10 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import fefesCard from "/assets/017a226ee4f731f8ed5e8b9634438d7070ea1bbb.png";
 import fefesKitchenWhite from "/assets/585272a9929a5067cd30cd130eafa10c21bb074f.png";
 import fefesKitchenBlack from "/assets/b499ca873c50c007f01c5f808c516b6352303b01.png";
 
 export function FeFesKitchenPortfolio() {
+  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">

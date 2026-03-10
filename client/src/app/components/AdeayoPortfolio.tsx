@@ -1,8 +1,10 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import adeayoLogo from "/assets/6cc1ad7b7df17ad8b72f927373f24a2653494634.png";
 import adeayoBagPurple from "/assets/820b227adfaf7b78bcca76341a23b32b611d42e5.png";
 import adeayoBagWhite from "/assets/9f267c36cd25cea3749b24a18058510afe3139d7.png";
 
 export function AdeayoPortfolio() {
+  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto">

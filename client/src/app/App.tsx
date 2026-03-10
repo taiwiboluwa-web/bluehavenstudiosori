@@ -26,13 +26,17 @@ import {
   Users,
   Menu,
   X,
+  Moon,
+  Sun,
 } from "lucide-react";
-import bluehavenFullLogo from "figma:asset/318705c2795eaab3aa2bbcbe474e91ea2d50306e.png";
-import bluehavenNewLogo from "figma:asset/97dc3295bd62e7ada943dd44b88acc765a6f4ca6.png";
+import { useTheme } from "@/contexts/ThemeContext";
+const bluehavenFullLogo = "/assets/318705c2795eaab3aa2bbcbe474e91ea2d50306e.png";
+const bluehavenNewLogo = "/assets/97dc3295bd62e7ada943dd44b88acc765a6f4ca6.png";
 import { useState } from "react";
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -48,32 +52,57 @@ export default function App() {
 
   return (
     <div
-      className="size-full overflow-y-auto bg-[#1a1a1a]"
+      className={`size-full overflow-y-auto transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-[#1a1a1a] text-white"
+          : "bg-white text-gray-900"
+      }`}
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       {/* Header */}
-      <header className="bg-black px-4 md:px-[10%] py-3 md:py-5 flex justify-between items-center sticky top-0 z-50">
+      <header className={`px-4 md:px-[10%] py-3 md:py-5 flex justify-between items-center sticky top-0 z-50 transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-black"
+          : "bg-gray-50 border-b border-gray-200"
+      }`}>
         <div className="flex items-center">
-          <h1 className="text-lg md:text-2xl font-bold text-white uppercase tracking-wide">
+          <h1 className={`text-lg md:text-2xl font-bold uppercase tracking-wide ${
+            theme === "dark" ? "text-white" : "text-gray-900"
+          }`}>
             BLUEHAVEN STUDIOS
           </h1>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-white p-2"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? (
-            <X size={24} />
-          ) : (
-            <Menu size={24} />
-          )}
-        </button>
+        {/* Mobile Menu Button & Theme Toggle */}
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-lg transition-colors duration-300 ${
+              theme === "dark"
+                ? "hover:bg-gray-800 text-yellow-400"
+                : "hover:bg-gray-200 text-gray-700"
+            }`}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`p-2 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            }`}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X size={24} />
+            ) : (
+              <Menu size={24} />
+            )}
+          </button>
+        </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:block">
+        <nav className="hidden md:flex items-center gap-8">
           <ul className="flex gap-5 list-none">
             <li>
               <button
@@ -83,7 +112,11 @@ export default function App() {
                     behavior: "smooth",
                   })
                 }
-                className="text-white hover:text-gray-300 transition-colors text-sm uppercase tracking-wide"
+                className={`transition-colors text-sm uppercase tracking-wide ${
+                  theme === "dark"
+                    ? "text-white hover:text-gray-300"
+                    : "text-gray-900 hover:text-gray-600"
+                }`}
               >
                 Home
               </button>
@@ -91,7 +124,11 @@ export default function App() {
             <li>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-white hover:text-gray-300 transition-colors text-sm uppercase tracking-wide"
+                className={`transition-colors text-sm uppercase tracking-wide ${
+                  theme === "dark"
+                    ? "text-white hover:text-gray-300"
+                    : "text-gray-900 hover:text-gray-600"
+                }`}
               >
                 Services
               </button>
@@ -99,7 +136,11 @@ export default function App() {
             <li>
               <button
                 onClick={() => scrollToSection("portfolio")}
-                className="text-white hover:text-gray-300 transition-colors text-sm uppercase tracking-wide"
+                className={`transition-colors text-sm uppercase tracking-wide ${
+                  theme === "dark"
+                    ? "text-white hover:text-gray-300"
+                    : "text-gray-900 hover:text-gray-600"
+                }`}
               >
                 Portfolio
               </button>
@@ -107,7 +148,11 @@ export default function App() {
             <li>
               <button
                 onClick={() => scrollToSection("process")}
-                className="text-white hover:text-gray-300 transition-colors text-sm uppercase tracking-wide"
+                className={`transition-colors text-sm uppercase tracking-wide ${
+                  theme === "dark"
+                    ? "text-white hover:text-gray-300"
+                    : "text-gray-900 hover:text-gray-600"
+                }`}
               >
                 Process
               </button>
@@ -115,12 +160,27 @@ export default function App() {
             <li>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-white hover:text-gray-300 transition-colors text-sm uppercase tracking-wide"
+                className={`transition-colors text-sm uppercase tracking-wide ${
+                  theme === "dark"
+                    ? "text-white hover:text-gray-300"
+                    : "text-gray-900 hover:text-gray-600"
+                }`}
               >
                 Inquire
               </button>
             </li>
           </ul>
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-lg transition-colors duration-300 ${
+              theme === "dark"
+                ? "hover:bg-gray-800 text-yellow-400"
+                : "hover:bg-gray-200 text-gray-700"
+            }`}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </nav>
 
         {/* Mobile Navigation */}

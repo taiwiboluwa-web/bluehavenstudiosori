@@ -1,9 +1,11 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import lordsBlack from "/assets/d998f756ade35de3fb24f728515fbff45bad6fc4.png";
 import lordsPurple from "/assets/1e99898bfdf296abb3b1c2b3c694c19cd16c9602.png";
 import lordsBlackAlt from "/assets/cfa503c8ba964464fd2628c9d3c6abc558385cdb.png";
 import lordsPurpleFull from "/assets/fd6191e9a5047bdbde77ab60ac6fc35eb839f382.png";
 
 export function LordsHeritagePortfolio() {
+  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">

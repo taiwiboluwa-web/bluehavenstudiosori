@@ -1,7 +1,9 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import dazzledFlat from "/assets/df042d4e65ba2df64c7d343976873ac3b4d5c6ef.png";
 const dazzled3D = "https://d2xsxph8kpxj0f.cloudfront.net/310519663390689289/Cm2CCi2zaFHN3L7TYPGf98/7da56af8fcbc2666fec87684b9b64e286c3cb4c1_39f2f9d7.png";
 
 export function DazzledinEssencePortfolio() {
+  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       <div className="max-w-7xl mx-auto">
