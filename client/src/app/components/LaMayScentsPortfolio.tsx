@@ -1,8 +1,6 @@
-import { useTheme } from "@/contexts/ThemeContext";
 import lamaysScentsLogo from "/assets/eca5d1b1aae735acb6bdea0539176c17f20e3de2.png";
 
 export function LaMayScentsPortfolio() {
-  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">

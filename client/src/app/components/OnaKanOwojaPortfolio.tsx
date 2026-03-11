@@ -1,10 +1,8 @@
-import { useTheme } from "@/contexts/ThemeContext";
 import onaCoaster from "/assets/bc89b70e6e1d330be214c857d2c6898a12487874.png";
 import onaNotebook from "/assets/a870db28d502ad17b4b4974a4ccf93949d4dd468.png";
 import onaRoundCoaster from "/assets/e8016a92293874beed4c036fcd5610e927ed5248.png";
 
 export function OnaKanOwojaPortfolio() {
-  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">

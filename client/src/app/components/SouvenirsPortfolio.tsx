@@ -1,9 +1,7 @@
-import { useTheme } from "@/contexts/ThemeContext";
 import souvenirsBlack from "/assets/ec005afe1a9deeefcb41c6217811b3b50d2c9f64.png";
 import souvenirsWhite from "/assets/d8985e21a43878d8dcaba7ff78421dc080247cd2.png";
 
 export function SouvenirsPortfolio() {
-  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto">

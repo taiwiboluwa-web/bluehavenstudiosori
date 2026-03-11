@@ -1,10 +1,8 @@
-import { useTheme } from "@/contexts/ThemeContext";
 import wendeesPastries from "/assets/c2d1cc85a4cd9faf2d9351a1d013e7b0224766e2.png";
 import wendeesBlue from "/assets/89543834dc9fac8d6c3c7e5d1fd7e565785a5dad.png";
 import wendeesBlack from "/assets/610c1830402e674b95c57a504d1e7d35d4193879.png";
 
 export function WendeesBakeryPortfolio() {
-  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto">

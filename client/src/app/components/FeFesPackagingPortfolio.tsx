@@ -1,4 +1,3 @@
-import { useTheme } from "@/contexts/ThemeContext";
 import noodleBoxBlack from "/assets/7e8025457accc79323b47f5eb87a3314fdc2d18d.png";
 import packWhite from "/assets/8208657a6fa70aeb805232a668820cd28fc372af.png";
 import mealBoxes from "/assets/daa048910ac620e253488c7a0471a6e2792f135b.png";
@@ -7,7 +6,6 @@ import takeoutBagBlack from "/assets/c8b53989f6b1c11905e7b1eb1fc9280a7efb0e30.pn
 import noodleBoxWhite from "/assets/d3525f4100ea32178f84c0216a4661db4da7e141.png";
 
 export function FeFesPackagingPortfolio() {
-  const { theme } = useTheme();
   return (
     <section className="py-12 md:py-20 px-4 md:px-[10%] bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">

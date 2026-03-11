@@ -1,8 +1,6 @@
-import { useTheme } from "@/contexts/ThemeContext";
 import fetesLight from "/assets/02727bfe17ced13dc5028d6f270d3eec43ea5c13.png";
 
 export function FeFesPortfolio() {
-  const { theme } = useTheme();
   return (
     <section className="py-20 px-[10%] bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
