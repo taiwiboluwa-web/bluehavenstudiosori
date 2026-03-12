@@ -519,10 +519,73 @@ export default function App() {
       <LordsHeritagePortfolio />
       <ElejaExchangePortfolio />
 
-      {/* Contact Section */}
+      {/* Contact Section - Footer Style */}
       <section
         id="contact"
-        className="py-12 md:py-20 px-4 md:px-8 text-center bg-[#1a1a1a]"
+        className="py-16 md:py-24 px-4 md:px-8 bg-[#3d3d2d] text-white"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+            {/* Left Column - Brand & Social */}
+            <div className="flex flex-col justify-start">
+              <h3 className="text-lg md:text-xl font-bold mb-4">Blue Haven Studios</h3>
+              <p className="text-sm text-gray-300 mb-6 leading-relaxed">
+                Bringing your brand to life through creative excellence in design, branding, and digital experiences.
+              </p>
+              <div className="flex gap-4">
+                <a href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw" target="_blank" rel="noopener noreferrer" className="text-white hover:text-red-500 transition-colors">
+                  <YoutubeIcon className="w-6 h-6" />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-500 transition-colors">
+                  <InstagramIcon className="w-6 h-6" />
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors">
+                  <TiktokIcon className="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+
+            {/* Middle Column - Quick Links */}
+            <div>
+              <h3 className="text-lg md:text-xl font-bold mb-6">Quick Links</h3>
+              <ul className="space-y-3 text-sm text-gray-300">
+                <li><a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+                <li><a href="#process" className="hover:text-white transition-colors">Process</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Right Column - Contact Info */}
+            <div>
+              <h3 className="text-lg md:text-xl font-bold mb-6">Contact Us</h3>
+              <div className="space-y-4 text-sm text-gray-300">
+                <div className="flex items-center gap-3">
+                  <span>📱</span>
+                  <a href="tel:+2348068483718" className="hover:text-white transition-colors">+234 806 848 3718</a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span>💬</span>
+                  <a href="https://wa.me/2348068483718" className="hover:text-white transition-colors">WhatsApp</a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span>📧</span>
+                  <a href="mailto:bluehavens.studios@gmail.com" className="hover:text-white transition-colors">bluehavens.studios@gmail.com</a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span>📍</span>
+                  <span>Lagos, Nigeria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Old Contact Section - Removed */}
+      <section
+        id="contact-old"
+        className="hidden py-12 md:py-20 px-4 md:px-8 text-center bg-[#1a1a1a]"
       >
         <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 uppercase text-white">
           Ready to Get Started?
