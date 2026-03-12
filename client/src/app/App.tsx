@@ -71,22 +71,10 @@ export default function App() {
     >
       {/* Header */}
       <header className="bg-black px-4 md:px-[10%] py-3 md:py-5 flex justify-between items-center sticky top-0 z-50">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center">
           <h1 className="text-lg md:text-2xl font-bold text-white uppercase tracking-wide">
             BLUEHAVEN STUDIOS
           </h1>
-          {/* Seasonal Theme Selector */}
-          <select
-            value={season}
-            onChange={(e) => setSeason(e.target.value as SeasonalTheme)}
-            className="hidden md:block text-xs bg-gray-800 text-white border border-gray-600 rounded px-2 py-1 hover:border-gray-400 transition-colors"
-          >
-            {seasons.map((s) => (
-              <option key={s} value={s}>
-                {seasonLabels[s]}
-              </option>
-            ))}
-          </select>
         </div>
 
         {/* Mobile Menu Button */}
@@ -688,6 +676,21 @@ export default function App() {
           </span>
         </button>
       </section>
+
+      {/* Seasonal Theme Selector - Bottom Left */}
+      <div className="fixed bottom-6 left-6 z-40">
+        <select
+          value={season}
+          onChange={(e) => setSeason(e.target.value as SeasonalTheme)}
+          className="text-xs md:text-sm bg-gray-900 text-white border border-gray-600 rounded-lg px-3 py-2 hover:border-white transition-colors cursor-pointer shadow-lg"
+        >
+          {seasons.map((s) => (
+            <option key={s} value={s}>
+              {seasonLabels[s]}
+            </option>
+          ))}
+        </select>
+      </div>
 
       {/* Footer */}
       <footer className="bg-black text-white text-center py-8 md:py-10 px-4 md:px-[10%]">
