@@ -31,7 +31,7 @@ import bluehavenFullLogo from "figma:asset/318705c2795eaab3aa2bbcbe474e91ea2d503
 import bluehavenNewLogo from "figma:asset/97dc3295bd62e7ada943dd44b88acc765a6f4ca6.png";
 import { useState } from "react";
 import { useSeasonalTheme } from "@/contexts/SeasonalThemeContext";
-import { SocialIcons, socialIconPaths } from "@/components/SocialIcons";
+import { createSocialLinks, YoutubeIcon, InstagramIcon, TiktokIcon, WhatsappIcon, EmailIcon } from "@/components/OutlinedSocialIcons";
 import type { SeasonalTheme } from "@/contexts/SeasonalThemeContext";
 
 export default function App() {
@@ -688,6 +688,23 @@ export default function App() {
 
       {/* Footer */}
       <footer className="bg-black text-white text-center py-8 md:py-10 px-4 md:px-[10%]">
+        <div className="flex justify-center gap-6 mb-6">
+          <a href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw" target="_blank" rel="noopener noreferrer" className="text-white hover:text-red-500 transition-colors">
+            <YoutubeIcon className="w-6 h-6" />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-500 transition-colors">
+            <InstagramIcon className="w-6 h-6" />
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors">
+            <TiktokIcon className="w-6 h-6" />
+          </a>
+          <a href="https://wa.me/2348068483718" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500 transition-colors">
+            <WhatsappIcon className="w-6 h-6" />
+          </a>
+          <a href="mailto:bluehavens.studios@gmail.com" className="text-white hover:text-blue-500 transition-colors">
+            <EmailIcon className="w-6 h-6" />
+          </a>
+        </div>
         <p className="text-sm md:text-base mb-2">
           &copy; 2026 Bluehaven Studios. All Rights Reserved.
         </p>
