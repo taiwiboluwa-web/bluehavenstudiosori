@@ -30,9 +30,21 @@ import {
 import bluehavenFullLogo from "figma:asset/318705c2795eaab3aa2bbcbe474e91ea2d50306e.png";
 import bluehavenNewLogo from "figma:asset/97dc3295bd62e7ada943dd44b88acc765a6f4ca6.png";
 import { useState } from "react";
+import { useSeasonalTheme } from "@/contexts/SeasonalThemeContext";
+import { SocialIcons, socialIconPaths } from "@/components/SocialIcons";
+import type { SeasonalTheme } from "@/contexts/SeasonalThemeContext";
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { season, setSeason } = useSeasonalTheme();
+  const seasons: SeasonalTheme[] = ['default', 'christmas', 'easter', 'independence', 'valentine'];
+  const seasonLabels: Record<SeasonalTheme, string> = {
+    default: '🎨 Default',
+    christmas: '🎄 Christmas',
+    easter: '🐰 Easter',
+    independence: '🇳🇬 Independence',
+    valentine: '💕 Valentine',
+  }
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -53,10 +65,22 @@ export default function App() {
     >
       {/* Header */}
       <header className="bg-black px-4 md:px-[10%] py-3 md:py-5 flex justify-between items-center sticky top-0 z-50">
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
           <h1 className="text-lg md:text-2xl font-bold text-white uppercase tracking-wide">
             BLUEHAVEN STUDIOS
           </h1>
+          {/* Seasonal Theme Selector */}
+          <select
+            value={season}
+            onChange={(e) => setSeason(e.target.value as SeasonalTheme)}
+            className="hidden md:block text-xs bg-gray-800 text-white border border-gray-600 rounded px-2 py-1 hover:border-gray-400 transition-colors"
+          >
+            {seasons.map((s) => (
+              <option key={s} value={s}>
+                {seasonLabels[s]}
+              </option>
+            ))}
+          </select>
         </div>
 
         {/* Mobile Menu Button */}
