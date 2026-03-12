@@ -17,22 +17,16 @@ import { DazzledinEssencePortfolio } from "@/app/components/DazzledinEssencePort
 import { HeroSlideshow } from "@/app/components/HeroSlideshow";
 import { PortfolioSectionDivider } from "@/app/components/PortfolioSectionDivider";
 import {
-  MailIcon,
-  PhoneIcon,
-  MessageIcon,
-  VideoIcon,
-  MenuIcon,
-  CloseIcon,
-  ExternalLinkIcon,
-  UsersIcon,
-  BrushIcon,
-  BookIcon,
-  CameraIcon,
-  PodcastIcon,
-  PaletteIcon,
-  CheckIcon,
-  ArrowRightIcon,
-} from "@/components/StandardIcons";
+  Mail,
+  Phone,
+  MessageCircle,
+  Instagram,
+  Video,
+  Link as LinkIcon,
+  Users,
+  Menu,
+  X,
+} from "lucide-react";
 import bluehavenFullLogo from "figma:asset/318705c2795eaab3aa2bbcbe474e91ea2d50306e.png";
 import bluehavenNewLogo from "figma:asset/97dc3295bd62e7ada943dd44b88acc765a6f4ca6.png";
 import { useState } from "react";
@@ -84,9 +78,9 @@ export default function App() {
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
-            <CloseIcon size={24} />
+            <X size={24} />
           ) : (
-            <MenuIcon size={24} />
+            <Menu size={24} />
           )}
         </button>
 
@@ -547,7 +541,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-[#0a0a0a] border border-gray-800 hover:border-white rounded-lg transition-all group"
             >
-              <MailIcon className="w-5 h-5 md:w-6 md:h-6 text-white flex-shrink-0" />
+              📧
               <div className="text-left flex-1 min-w-0">
                 <p className="text-xs text-gray-500 uppercase tracking-wider">
                   Email
@@ -564,7 +558,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-[#0a0a0a] border border-gray-800 hover:border-green-500 rounded-lg transition-all group"
             >
-              <MessageIcon className="w-5 h-5 md:w-6 md:h-6 text-green-500 flex-shrink-0" />
+              💬
               <div className="text-left flex-1">
                 <p className="text-xs text-gray-500 uppercase tracking-wider">
                   WhatsApp Business
@@ -588,7 +582,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 md:gap-3 p-3 md:p-4 bg-[#0a0a0a] border border-gray-800 hover:border-pink-500 rounded-lg transition-all group"
               >
-                <VideoIcon className="w-4 h-4 md:w-5 md:h-5 text-pink-500 flex-shrink-0" />
+                🎥
                 <div className="text-left">
                   <p className="text-xs md:text-sm text-white group-hover:text-gray-300 transition-colors">
                     Instagram
@@ -602,7 +596,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 md:gap-3 p-3 md:p-4 bg-[#0a0a0a] border border-gray-800 hover:border-cyan-400 rounded-lg transition-all group"
               >
-                <VideoIcon className="w-4 h-4 md:w-5 md:h-5 text-cyan-400 flex-shrink-0" />
+                🎥
                 <div className="text-left">
                   <p className="text-xs md:text-sm text-white group-hover:text-gray-300 transition-colors">
                     TikTok
@@ -636,7 +630,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 md:gap-3 p-3 md:p-4 bg-[#0a0a0a] border border-gray-800 hover:border-green-500 rounded-lg transition-all group"
               >
-                <UsersIcon className="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" />
+                👥
                 <div className="text-left">
                   <p className="text-xs md:text-sm text-white group-hover:text-gray-300 transition-colors">
                     WhatsApp Group
@@ -650,7 +644,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 md:gap-3 p-3 md:p-4 bg-[#0a0a0a] border border-gray-800 hover:border-blue-500 rounded-lg transition-all group col-span-2 md:col-span-2"
               >
-                <ExternalLinkIcon className="w-4 h-4 md:w-5 md:h-5 text-blue-500 flex-shrink-0" />
+                🔗
                 <div className="text-left">
                   <p className="text-xs md:text-sm text-white group-hover:text-gray-300 transition-colors">
                     All Links
@@ -670,7 +664,7 @@ export default function App() {
           }
           className="bg-white text-black px-6 md:px-12 py-3 md:py-4 text-sm md:text-base font-bold uppercase tracking-wide hover:bg-gray-200 transition-all hover:scale-105 shadow-2xl inline-flex items-center gap-2 md:gap-3"
         >
-          <MessageIcon className="w-4 h-4 md:w-5 md:h-5" />
+          💬
           <span className="whitespace-nowrap">
             Contact Us on WhatsApp
           </span>
@@ -678,11 +672,11 @@ export default function App() {
       </section>
 
       {/* Seasonal Theme Selector - Bottom Left */}
-      <div className="fixed bottom-6 left-6 z-40">
+      <div className="fixed bottom-4 left-4 z-40">
         <select
           value={season}
           onChange={(e) => setSeason(e.target.value as SeasonalTheme)}
-          className="text-xs md:text-sm bg-gray-900 text-white border border-gray-600 rounded-lg px-3 py-2 hover:border-white transition-colors cursor-pointer shadow-lg"
+          className="text-xs bg-gray-900 text-white border border-gray-600 rounded-full px-2 py-1 hover:border-white transition-colors cursor-pointer shadow-lg font-semibold"
         >
           {seasons.map((s) => (
             <option key={s} value={s}>
